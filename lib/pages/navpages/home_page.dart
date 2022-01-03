@@ -15,6 +15,7 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // menu text
           Container(
             padding: const EdgeInsets.only(top: 70, left: 20),
             child: Row(
@@ -34,7 +35,13 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           SizedBox(height: 40),
-          AppLargeText(text: "Discover"),
+          // discover text
+          Container(
+            margin: const EdgeInsets.only(left: 20),
+            child: AppLargeText(text: "Discover"),
+          ),
+          SizedBox(height: 30),
+          // tabbar
         ],
       ),
     );
