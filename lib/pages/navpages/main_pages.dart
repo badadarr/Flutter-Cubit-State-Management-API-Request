@@ -19,16 +19,36 @@ class _MainpageState extends State<Mainpage> {
     SearchPage(),
     Mypage(),
   ];
+  int currentIndex = 0;
+  void onTap(int index) {
+    setState(() {
+      currentIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+      body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        unselectedFontSize: 0,
+        selectedFontSize: 0,
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.white,
+        onTap: onTap,
+        currentIndex: currentIndex,
+        selectedItemColor: Colors.amberAccent[700],
+        unselectedItemColor: Colors.grey.withOpacity(0.5),
+        showUnselectedLabels: false,
+        showSelectedLabels: false,
+        elevation: 0,
         items: [
           BottomNavigationBarItem(label: "Home", icon: Icon(Icons.apps)),
           BottomNavigationBarItem(
               label: "Bar", icon: Icon(Icons.bar_chart_rounded)),
           BottomNavigationBarItem(
-              label: "Search", icon: Icon(Icons.search_off_rounded)),
+              label: "Search", icon: Icon(Icons.search_rounded)),
           BottomNavigationBarItem(
               label: "My", icon: Icon(Icons.person_outline)),
         ],
