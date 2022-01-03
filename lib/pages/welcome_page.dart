@@ -70,7 +70,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                 borderRadius: BorderRadius.circular(8),
                                 color: index == indexDots
                                     ? AppColors.mainColor
-                                    : AppColors.mainColor.withOpacity(0.8)));
+                                    : AppColors.mainColor.withOpacity(0.3)));
                       }),
                     )
                   ],
