@@ -37,61 +37,62 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               ],
             ),
           ),
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
           // discover text
           Container(
             margin: const EdgeInsets.only(left: 20),
             child: AppLargeText(text: "Discover"),
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           // tabbar
-          Container(
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: TabBar(
-                  labelPadding: const EdgeInsets.only(left: 20, right: 20),
-                  controller: _tabController,
-                  labelColor: Colors.black,
-                  unselectedLabelColor: Colors.grey,
-                  isScrollable: true,
-                  indicatorSize: TabBarIndicatorSize.label,
-                  indicator:
-                      CircleTabIndicator(color: AppColors.mainColor, radius: 4),
-                  tabs: [
-                    Tab(text: "Places"),
-                    Tab(text: "Inspiration"),
-                    Tab(text: "Emotions"),
-                  ]),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: TabBar(
+              labelPadding: const EdgeInsets.only(left: 20, right: 20),
+              controller: _tabController,
+              labelColor: Colors.black,
+              unselectedLabelColor: Colors.blueGrey,
+              isScrollable: true,
+              indicatorSize: TabBarIndicatorSize.label,
+              indicator:
+                  CircleTabIndicator(color: AppColors.mainColor, radius: 4),
+              tabs: [
+                Tab(text: "Places"),
+                Tab(text: "Inspiration"),
+                Tab(text: "Emotions"),
+              ],
             ),
           ),
           Container(
             padding: const EdgeInsets.only(left: 20),
             height: 300,
             width: double.maxFinite,
-            child: TabBarView(controller: _tabController, children: [
-              ListView.builder(
-                itemCount: 3,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    margin: const EdgeInsets.only(right: 20, top: 10),
-                    width: 200,
-                    height: 300,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.white,
-                      image: const DecorationImage(
-                          image: AssetImage("img/mountain.jpeg"),
-                          fit: BoxFit.cover),
-                    ),
-                  );
-                },
-              ),
-              Text("Hi"),
-              Text("There"),
-              Text("Bye"),
-            ]),
-          )
+            child: TabBarView(
+              controller: _tabController,
+              children: [
+                ListView.builder(
+                  itemCount: 3,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Container(
+                      margin: const EdgeInsets.only(right: 15, top: 25),
+                      width: 200,
+                      height: 300,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white,
+                          image: DecorationImage(
+                            image: AssetImage("img/mountain.jpeg"),
+                            fit: BoxFit.cover,
+                          )),
+                    );
+                  },
+                ),
+                Text("There"),
+                Text("Bye"),
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -104,6 +105,7 @@ class CircleTabIndicator extends Decoration {
   CircleTabIndicator({required this.color, required this.radius});
   @override
   BoxPainter createBoxPainter([VoidCallback? onChanged]) {
+    // ignore: todo
     // TODO: implement createBoxPainter
     return _CirclePainter(color: color, radius: radius);
   }
@@ -116,6 +118,7 @@ class _CirclePainter extends BoxPainter {
 
   @override
   void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
+    // ignore: todo
     // TODO: implement paint
     Paint _paint = Paint();
     _paint.color = color;
