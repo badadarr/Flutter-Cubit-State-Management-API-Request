@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             padding: const EdgeInsets.only(top: 70, left: 20),
             child: Row(
               children: [
-                Icon(Icons.menu_rounded, size: 30, color: Colors.black54),
+                const Icon(Icons.menu_rounded, size: 30, color: Colors.black54),
                 Expanded(child: Container()),
                 Container(
                   margin: const EdgeInsets.only(right: 20),
