@@ -45,11 +45,22 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           SizedBox(height: 30),
           // tabbar
           Container(
-            child: TabBar(controller: _tabController, tabs: [
-              Tab(text: "Places"),
-              Tab(text: "Inspiration"),
-              Tab(text: "Emotions"),
-            ]),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: TabBar(
+                  labelPadding: const EdgeInsets.only(left: 20, right: 20),
+                  controller: _tabController,
+                  labelColor: Colors.black,
+                  unselectedLabelColor: Colors.grey,
+                  isScrollable: true,
+                  indicatorSize: TabBarIndicatorSize.label,
+                  indicator: ,
+                  tabs: [
+                    Tab(text: "Places"),
+                    Tab(text: "Inspiration"),
+                    Tab(text: "Emotions"),
+                  ]),
+            ),
           ),
           Container(
             height: 300,
@@ -64,4 +75,20 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       ),
     );
   }
+}
+
+
+class CircleIndicator extends Decoration {
+  @override
+  BoxPainter createBoxPainter([VoidCallback? onChanged]) {
+    // TODO: implement createBoxPainter
+    throw UnimplementedError();
+  }
+}
+class _CirclePainter extends BoxPainter {
+  @override
+  void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
+    // TODO: implement paint
+  }
+    
 }
