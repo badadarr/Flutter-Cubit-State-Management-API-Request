@@ -106,7 +106,34 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   ),
                   AppText(text: "See all", color: AppColors.textColor1)
                 ]),
-          )
+          ),
+          SizedBox(height: 15),
+          Container(
+            height: 100,
+            width: double.maxFinite,
+            margin: const EdgeInsets.only(left: 15),
+            child: ListView.builder(
+                itemCount: 4,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (_, index) {
+                  return Column(
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.only(right: 50),
+                        width: 80,
+                        height: 80,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.white,
+                            image: const DecorationImage(
+                              image: AssetImage("img/mountain.jpeg"),
+                              fit: BoxFit.cover,
+                            )),
+                      )
+                    ],
+                  );
+                }),
+          ),
         ],
       ),
     );
