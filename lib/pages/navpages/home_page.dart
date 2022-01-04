@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cubit/misc/colors.dart';
 import 'package:flutter_cubit/widgets/app_large_text.dart';
 
 class HomePage extends StatefulWidget {
@@ -54,7 +55,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   unselectedLabelColor: Colors.grey,
                   isScrollable: true,
                   indicatorSize: TabBarIndicatorSize.label,
-                  indicator: ,
+                  indicator:
+                      CircleTabIndicator(color: AppColors.mainColor, radius: 4),
                   tabs: [
                     Tab(text: "Places"),
                     Tab(text: "Inspiration"),
@@ -77,18 +79,31 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   }
 }
 
-
-class CircleIndicator extends Decoration {
+class CircleTabIndicator extends Decoration {
+  final Color color;
+  double radius;
+  CircleTabIndicator({required this.color, required this.radius});
   @override
   BoxPainter createBoxPainter([VoidCallback? onChanged]) {
     // TODO: implement createBoxPainter
-    throw UnimplementedError();
+    return _CirclePainter(color: color, radius: radius);
   }
 }
+
 class _CirclePainter extends BoxPainter {
+  final Color color;
+  double radius;
+  _CirclePainter({required this.color, required this.radius});
+
   @override
   void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
     // TODO: implement paint
+    Paint _paint = Paint();
+    _paint.color = color;
+    _paint.isAntiAlias = true;
+    final Offset circleOffset = Offset(
+        configuration.size!.width / 2 - radius / 2,
+        configuration.size!.height - radius);
+    canvas.drawCircle(offset + circleOffset, radius, _paint);
   }
-    
 }
