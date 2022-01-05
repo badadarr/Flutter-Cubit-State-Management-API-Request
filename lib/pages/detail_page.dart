@@ -4,6 +4,7 @@ import 'package:flutter_cubit/misc/colors.dart';
 import 'package:flutter_cubit/widgets/app_button.dart';
 import 'package:flutter_cubit/widgets/app_large_text.dart';
 import 'package:flutter_cubit/widgets/app_text.dart';
+import 'package:flutter_cubit/widgets/responsive_button.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({Key? key}) : super(key: key);
@@ -122,29 +123,32 @@ class _DetailPageState extends State<DetailPage> {
                       text: "Number of people in your group",
                       color: AppColors.mainTextColor,
                     ),
-                    Wrap(
-                      children: List.generate(5, (index) {
-                        return InkWell(
-                          onTap: () {
-                            setState(() {
-                              selectedIndex = index;
-                            });
-                          },
-                          child: AppButton(
-                            size: 50,
-                            color: selectedIndex == index
-                                ? Colors.white
-                                : Colors.black,
-                            backgroundColor: selectedIndex == index
-                                ? Colors.black
-                                : AppColors.buttonBackground,
-                            borderColor: selectedIndex == index
-                                ? Colors.black
-                                : AppColors.buttonBackground,
-                            text: (index + 1).toString(),
-                          ),
-                        );
-                      }),
+                    Container(
+                      margin: const EdgeInsets.only(top: 10),
+                      child: Wrap(
+                        children: List.generate(5, (index) {
+                          return InkWell(
+                            onTap: () {
+                              setState(() {
+                                selectedIndex = index;
+                              });
+                            },
+                            child: AppButton(
+                              size: 50,
+                              color: selectedIndex == index
+                                  ? Colors.white
+                                  : Colors.black,
+                              backgroundColor: selectedIndex == index
+                                  ? Colors.black
+                                  : AppColors.buttonBackground,
+                              borderColor: selectedIndex == index
+                                  ? Colors.black
+                                  : AppColors.buttonBackground,
+                              text: (index + 1).toString(),
+                            ),
+                          );
+                        }),
+                      ),
                     ),
                     SizedBox(height: 30),
                     AppLargeText(
@@ -161,8 +165,9 @@ class _DetailPageState extends State<DetailPage> {
               ),
             ),
             Positioned(
-              bottom: 35,
+              bottom: 30,
               left: 20,
+              right: 30,
               child: Row(
                 children: [
                   AppButton(
@@ -172,6 +177,10 @@ class _DetailPageState extends State<DetailPage> {
                     borderColor: AppColors.textColor1,
                     isIcon: true,
                     icon: Icons.favorite_border_rounded,
+                  ),
+                  SizedBox(width: 20),
+                  ResponsiveButton(
+                    isResponsive: true,
                   ),
                 ],
               ),
