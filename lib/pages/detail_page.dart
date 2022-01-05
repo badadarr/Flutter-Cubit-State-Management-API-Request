@@ -29,7 +29,7 @@ class _DetailPageState extends State<DetailPage> {
               child: Container(
                 width: double.maxFinite,
                 height: 350,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage("img/mountain.jpeg"),
                     fit: BoxFit.cover,
@@ -56,7 +56,7 @@ class _DetailPageState extends State<DetailPage> {
                 padding: const EdgeInsets.only(left: 20, right: 20, top: 30),
                 width: MediaQuery.of(context).size.width,
                 height: 500,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
@@ -158,6 +158,22 @@ class _DetailPageState extends State<DetailPage> {
                         color: AppColors.mainTextColor),
                   ],
                 ),
+              ),
+            ),
+            Positioned(
+              bottom: 35,
+              left: 20,
+              child: Row(
+                children: [
+                  AppButton(
+                    size: 60,
+                    color: AppColors.textColor1,
+                    backgroundColor: Colors.white,
+                    borderColor: AppColors.textColor1,
+                    isIcon: true,
+                    icon: Icons.favorite_border_rounded,
+                  ),
+                ],
               ),
             ),
           ],
