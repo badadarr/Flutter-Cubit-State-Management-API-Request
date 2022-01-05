@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cubit/misc/colors.dart';
+import 'package:flutter_cubit/widgets/app_button.dart';
 import 'package:flutter_cubit/widgets/app_large_text.dart';
 import 'package:flutter_cubit/widgets/app_text.dart';
 
@@ -108,7 +109,29 @@ class _DetailPageState extends State<DetailPage> {
                           color: AppColors.textColor2,
                         ),
                       ],
-                    )
+                    ),
+                    SizedBox(height: 30),
+                    AppLargeText(
+                      text: "People",
+                      color: Colors.black.withOpacity(0.8),
+                      size: 20,
+                    ),
+                    SizedBox(height: 10),
+                    AppText(
+                      text: "Number of people in your group",
+                      color: AppColors.mainTextColor,
+                    ),
+                    Wrap(
+                      children: List.generate(5, (index) {
+                        return AppButton(
+                          size: 50,
+                          color: Colors.black,
+                          backgroundColor: AppColors.buttonBackground,
+                          borderColor: AppColors.buttonBackground,
+                          isIcon: false,
+                        );
+                      }),
+                    ),
                   ],
                 ),
               ),
