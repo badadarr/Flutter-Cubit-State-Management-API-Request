@@ -155,17 +155,18 @@ class _DetailPageState extends State<DetailPage> {
                         text: "Description",
                         size: 25,
                         color: Colors.black.withOpacity(0.8)),
-                    SizedBox(height: 5),
+                    SizedBox(height: 10),
                     AppText(
                         text:
-                            "You must go for a travel. Travelling helps get rid of pressure. Go to the mountains to the nature.",
+                            """Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                            """,
                         color: AppColors.mainTextColor),
                   ],
                 ),
               ),
             ),
             Positioned(
-              bottom: 30,
+              bottom: 40,
               left: 20,
               right: 30,
               child: Row(
