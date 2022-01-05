@@ -19,7 +19,7 @@ class _DetailPageState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         width: double.maxFinite,
         height: double.maxFinite,
         child: Stack(
@@ -45,7 +45,7 @@ class _DetailPageState extends State<DetailPage> {
                 children: [
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.menu_rounded),
+                    icon: const Icon(Icons.menu_rounded),
                     color: Colors.white,
                   )
                 ],
@@ -79,20 +79,20 @@ class _DetailPageState extends State<DetailPage> {
                         )
                       ],
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Row(
                       children: [
                         Icon(
                           Icons.location_on_rounded,
                           color: AppColors.mainColor,
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         AppText(
                             text: "USA, California",
                             color: AppColors.textColor1),
                       ],
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Row(
                       children: [
                         Wrap(
@@ -105,20 +105,20 @@ class _DetailPageState extends State<DetailPage> {
                             );
                           }),
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         AppText(
                           text: "(4.0)",
                           color: AppColors.textColor2,
                         ),
                       ],
                     ),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     AppLargeText(
                       text: "People",
                       color: Colors.black.withOpacity(0.8),
                       size: 20,
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     AppText(
                       text: "Number of people in your group",
                       color: AppColors.mainTextColor,
@@ -150,12 +150,12 @@ class _DetailPageState extends State<DetailPage> {
                         }),
                       ),
                     ),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     AppLargeText(
                         text: "Description",
                         size: 25,
                         color: Colors.black.withOpacity(0.8)),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     AppText(
                         text:
                             """Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
