@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class DataModel {
   String name;
   String img;

@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_cubit/pages/navpages/main_pages.dart';
 
 import 'cubit/app_cubit.dart';
-import 'cubit/app_cubit_logics.dart';
 import 'pages/detail_page.dart';
 
 void main() {
@@ -24,7 +23,6 @@ class MyApp extends StatelessWidget {
       ),
       home: BlocProvider<AppCubits>(
         create: (context) => AppCubits(),
-        child: AppCubitLogics(),
       ),
     );
   }
