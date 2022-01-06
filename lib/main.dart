@@ -21,7 +21,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: DetailPage(),
+      home: BlocProvider<AppCubits>(
+        create: (context) => AppCubits(),
+      ),
     );
   }
 }
