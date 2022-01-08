@@ -7,7 +7,7 @@ class WidgetBookReload extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Widgetbook(
-      categories: [],
+      categories: const [],
       appInfo: AppInfo(name: "Flutter Cubit SM"),
     );
   }
@@ -15,6 +15,6 @@ class WidgetBookReload extends StatelessWidget {
 
 void main() {
   runApp(
-    WidgetBookReload(),
+    const WidgetBookReload(),
   );
 }

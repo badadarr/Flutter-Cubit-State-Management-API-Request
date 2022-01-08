@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cubit/misc/colors.dart';
 import 'package:flutter_cubit/widgets/app_text.dart';
 
 class AppButton extends StatelessWidget {

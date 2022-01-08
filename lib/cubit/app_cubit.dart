@@ -4,7 +4,7 @@ import 'package:flutter_cubit/cubit/app_cubit_states.dart';
 import '../services/data_services.dart';
 
 class AppCubits extends Cubit<CubitStates> {
-  AppCubits(required this.data) : super(InitialState()) {
+  AppCubits(this.data) : super(InitialState()) {
     emit(WelcomeState());
   }
   final DataServices data;
